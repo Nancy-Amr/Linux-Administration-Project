@@ -1,0 +1,11 @@
+m) How can we achieve this (2 methods)? Write the steps to these 2 methods in a text file.
+First method: 
+We can add the directory path to the environment variables. We can do this by obtaining the full path of the directory containing the bash script file. Then, we’ll use the command “export” so that the file could be globally seen by all the children.
+Second method:
+We also can move the script to a directory already in a system’s path. This is done by using sudo to copy or move, check that the file is executable using chmod command, and finally running the script from anywhere.
+
+n) We would like this change to be permanent, how can we do this?
+We may add the “export” command to the shell configuration file.
+
+o) We just made this change permanent, but we don’t want to wait until another terminal is opened, we would like to make this change NOW, and in this terminal. What could we do?
+We may execute the command within the file script within the same shell (sourcing the configuration file), rather than opening a new session. This allows reloading the .bashrc file applying any changes directly in the current working session.

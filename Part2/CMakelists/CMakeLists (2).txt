@@ -1,0 +1,23 @@
+cmake_minimum_required(VERSION 3.10)
+
+
+project(xor_cipher
+
+	VERSION 1.0
+	DESCRIPTION "A cmake file for xor cipher."
+	LANGUAGES C)
+
+set(SOURCES
+	src/xor_decrypt.c
+	src/xor_encrypt.c
+)
+
+add_library(xor SHARED ${SOURCES})
+
+target_include_directories(
+        xor PUBLIC  ${CMAKE_CURRENT_SOURCE_DIR}/inc
+)
+
+target_compile_options(xor PRIVATE -Wall -Wextra -Wpedantic)
+
+
